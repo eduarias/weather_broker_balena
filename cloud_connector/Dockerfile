@@ -3,10 +3,11 @@ FROM resin/raspberrypi3-debian:stretch
 ENV INITSYSTEM on
 
 RUN  apt-get update && apt-get install -yq \
-    git \
+    build-essential \
     python3 \
     python3-dev \
     python3-pip \
+    python3-setuptools \
     build-essential \
   && apt-get clean && rm -rf /var/lib/apt/lists/*
 
