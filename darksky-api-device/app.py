@@ -25,9 +25,9 @@ def collect_data(device_name):
 
 
 if __name__ == '__main__':
-    name = 'DarkSkyAPI2'
+    name = 'DarkSkyAPI'
     while True:
-        r = requests.post('http://192.168.1.37:8080/sensor/data',
+        r = requests.post('http://cloud_connector:8080/sensor/data',
                           json=collect_data(name)
                           )
         logging.debug('Response: {} - {}'.format(r.status_code, r.text))
