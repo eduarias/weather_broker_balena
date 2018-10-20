@@ -26,7 +26,7 @@ if __name__ == '__main__':
     name = 'SenseHatDevice'
     while True:
         r = requests.post('http://cloud_connector:8080/sensor/data',
-                          data=collect_data(name))
+                          json=collect_data(name))
         logging.debug('Response: {} - {}'.format(r.status_code, r.text))
         logging.debug('Data sent: {}'.format(r.request.body))
         time.sleep(10)
