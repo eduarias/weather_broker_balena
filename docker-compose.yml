@@ -29,6 +29,6 @@ services:
       - cloud_connector
   darsky-api-device:
     restart: always
-    build: ./darksy-api-device
+    build: ./darksky-api-device
     depends_on:
     - cloud_connector
