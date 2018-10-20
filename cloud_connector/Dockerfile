@@ -10,6 +10,7 @@ RUN apt-get update && apt-get install -yq \
     python3-setuptools \
     zlib1g-dev \
     libjpeg-dev \
+    python3-sense-hat \
   && apt-get clean && rm -rf /var/lib/apt/lists/*
 
 RUN mkdir /cloud_connector
