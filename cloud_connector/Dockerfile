@@ -2,11 +2,11 @@ FROM resin/raspberrypi3-debian:stretch
 
 ENV INITSYSTEM on
 
-RUN apk add --update \
+RUN  apt-get update && apt-get install -yq \
     git \
     python-dev \
     build-base \
-  && rm -rf /var/cache/apk/*
+  && apt-get clean && rm -rf /var/lib/apt/lists/*
 
 RUN mkdir /cloud_connector
 COPY requirements.txt .
