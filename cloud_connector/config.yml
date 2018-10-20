@@ -1,7 +1,8 @@
-#devices:
-#  read_interval: 5
-#  sim01:
-#    name: sim01
+devices:
+  read_interval: 5
+  sim01:
+    name: SenseHat
+    type: SenseHat
 #  sim02:
 #    name: sim02
 

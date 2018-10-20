@@ -7,6 +7,7 @@ import logging
 from contextlib import closing
 
 from random import uniform
+from sense_hat import SenseHat
 
 
 class DeviceBase(object):
@@ -66,4 +67,28 @@ class SimDevice(DeviceBase):
         """
         res = {'temperature': round(uniform(20, 25), 2),
                'humidity': round(uniform(40, 65), 2)}
+        return res
+
+
+class SenseHat(DeviceBase):
+    """
+    Define a SenseHat device
+    :param name: Device name.
+    :type name: str.
+    """
+
+    def __init__(self, name):
+        super(SimDevice, self).__init__(name, measurements='sims')
+        self.hat = SenseHat()
+
+    def get_data(self):
+        """
+        Get data from SenseHat device sensors.
+        :return: A dictionary with the random values for temperature and humidity.
+        :rtype: dict.
+        """
+        res = {'temperature': self.hat.get_temperature(),
+               'humidity': self.hat.get_humidity(),
+               'pressure': self.hat.get_pressure(),
+               }
         return res

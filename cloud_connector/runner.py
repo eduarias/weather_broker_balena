@@ -15,7 +15,7 @@ from flask import Flask, request
 from flask_restplus import Resource, Api
 
 from cloud_connector.data.sender import DataSender
-from cloud_connector.devices import SimDevice
+from cloud_connector.devices import SimDevice, SenseHat
 from cloud_connector.data.tsdb import InfluxDB
 from cloud_connector.data.clouds import CloudAmazonMQTT, CloudThingsIO, CloudPubNub
 from cloud_connector.cc_exceptions import ConnectionTimeout, ConfigurationError, InputDataError
@@ -96,8 +96,9 @@ class ConfiguratorYaml(object):
             return None
         self.read_interval = devices_config.pop('read_interval')
         devices = []
+        # TODO - Accept any kind of device by type
         for device in devices_config.values():
-            devices.append(SimDevice(**device))
+            devices.append(SenseHat(**device))
         return devices
 
     def _configure_cloud(self):
