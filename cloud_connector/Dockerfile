@@ -1,4 +1,4 @@
-FROM FROM resin/raspberrypi3-debian:stretch
+FROM resin/raspberrypi3-debian:stretch
 
 ENV INITSYSTEM on
 
