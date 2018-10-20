@@ -16,7 +16,7 @@ def collect_data(device_name):
     res = {'device_name': device_name,
            'data': {
                'temperature': hat.get_temperature(),
-               'humidity': hat.get_pressure(),
+               'humidity': hat.get_humidity(),
                'pressure': hat.get_pressure(),
            }}
     return res
