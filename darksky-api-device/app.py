@@ -10,7 +10,8 @@ logging.basicConfig(level=logging.DEBUG,
 
 
 def collect_data(device_name):
-    response = requests.get('https://api.darksky.net/forecast/a8483764bba6a09c45c5ab2192baa671/41.390205,2.154007')
+    response = requests.get('https://api.darksky.net/forecast/a8483764bba6a09c45c5ab2192baa671/41.390205,2.154007',
+                            params={'units': 'si'})
     if response.ok:
         current_weather_data = response.json()['currently']
         res = {'device_name': device_name,
@@ -24,10 +25,11 @@ def collect_data(device_name):
 
 
 if __name__ == '__main__':
-    name = 'DarkSkyAPI'
+    name = 'DarkSkyAPI2'
     while True:
-        r = requests.post('http://cloud_connector:8080/sensor/data',
-                          json=collect_data(name))
+        r = requests.post('http://192.168.1.37:8080/sensor/data',
+                          json=collect_data(name)
+                          )
         logging.debug('Response: {} - {}'.format(r.status_code, r.text))
         logging.debug('Data sent: {}'.format(r.request.body))
         time.sleep(60)
