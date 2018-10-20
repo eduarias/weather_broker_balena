@@ -18,5 +18,12 @@ services:
     privileged: true
     build: ./cloud_connector
     restart: always
+    ports:
+      - "8080:8080"
     depends_on:
      - influxdb
+  sense-hat-device:
+    restart: always
+    build: ./sense-hat-device
+    depends_on:
+      - cloud_connector
