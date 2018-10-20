@@ -79,7 +79,7 @@ class SenseHatDevice(DeviceBase):
 
     def __init__(self, name):
         super(SenseHatDevice, self).__init__(name, measurements='sims')
-        self.hat = SenseHatDevice()
+        self.hat = SenseHat()
 
     def get_data(self):
         """
