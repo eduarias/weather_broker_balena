@@ -1,7 +1,5 @@
 FROM resin/raspberrypi3-debian:stretch
 
-ENV INITSYSTEM on
-
 RUN apt-get update && apt-get install -yq \
     python3 \
     python3-dev \
