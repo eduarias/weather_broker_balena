@@ -91,4 +91,7 @@ class SenseHat(DeviceBase):
                'humidity': self.hat.get_humidity(),
                'pressure': self.hat.get_pressure(),
                }
+        logging.debug('Reading data from SenseHat: temp - {0}, hum - {1}, pres - {2}'.format(res['temperature'],
+                                                                                             res['humidity'],
+                                                                                             res['pressure']))
         return res

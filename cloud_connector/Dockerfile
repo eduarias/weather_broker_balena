@@ -1,4 +1,6 @@
-FROM python:3.6-alpine3.8
+FROM FROM resin/raspberrypi3-debian:stretch
+
+ENV INITSYSTEM on
 
 RUN apk add --update \
     git \
