@@ -1,9 +1,6 @@
 import time
 
 import requests
-from sense_hat import SenseHat
-
-hat = SenseHat()
 
 
 def collect_data(device_name):
