@@ -24,6 +24,7 @@ services:
      - influxdb
   sense-hat-device:
     restart: always
+    privileged: true
     build: ./sense-hat-device
     depends_on:
       - cloud_connector
