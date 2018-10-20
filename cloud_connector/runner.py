@@ -14,12 +14,12 @@ from http import HTTPStatus
 from flask import Flask, request
 from flask_restplus import Resource, Api
 
-from cloud_connector.data.sender import DataSender
-from cloud_connector.devices import SimDevice, SenseHat
-from cloud_connector.data.tsdb import InfluxDB
-from cloud_connector.data.clouds import CloudAmazonMQTT, CloudThingsIO, CloudPubNub
-from cloud_connector.cc_exceptions import ConnectionTimeout, ConfigurationError, InputDataError
-from cloud_connector.data.strategies import All, Variation, MessageLimit, TimeLimit
+from .data.sender import DataSender
+from .devices import SimDevice, SenseHat
+from .data.tsdb import InfluxDB
+from .data.clouds import CloudAmazonMQTT, CloudThingsIO, CloudPubNub
+from .cc_exceptions import ConnectionTimeout, ConfigurationError, InputDataError
+from .data.strategies import All, Variation, MessageLimit, TimeLimit
 
 
 logging.basicConfig(level=logging.DEBUG,
