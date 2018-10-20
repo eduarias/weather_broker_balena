@@ -8,7 +8,7 @@ RUN apt-get update && apt-get install -yq \
     python3-dev \
     python3-pip \
     python3-setuptools \
-    zlib1g \
+    zlib1g-dev \
   && apt-get clean && rm -rf /var/lib/apt/lists/*
 
 RUN mkdir /cloud_connector
