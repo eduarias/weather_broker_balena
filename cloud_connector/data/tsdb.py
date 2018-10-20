@@ -7,7 +7,7 @@ import logging
 from influxdb import InfluxDBClient
 import dateutil
 import requests
-from cloud_connector.cc_exceptions import ConnectionTimeout
+from cc_exceptions import ConnectionTimeout
 
 
 INFLUXDB_TIMEOUT = 5
@@ -25,8 +25,8 @@ class TSDatabase(object):
             self.parameters = {}
         self.parameters.update({'host': host,
                                 'port': port,
-                                'username': user,
-                                'password': password,
+#                                'username': user,
+#                                'password': password,
                                 'database': database,
                                 'timeout': INFLUXDB_TIMEOUT,
                                 })

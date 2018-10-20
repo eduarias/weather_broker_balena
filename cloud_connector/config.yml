@@ -1,14 +1,13 @@
 devices:
   read_interval: 5
   sim01:
-    name: SenseHat
-    type: SenseHat
+    name: SenseHatDevice
 #  sim02:
 #    name: sim02
 
 tsdb:
   influxdb:
-    host: localhost
+    host: influxdb
     port: 8086
     user: root
     password: root

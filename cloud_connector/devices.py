@@ -57,7 +57,7 @@ class SimDevice(DeviceBase):
     """
 
     def __init__(self, name):
-        super(SimDevice, self).__init__(name, measurements='sims')
+        super(SimDevice, self).__init__(name, measurements='SenseHat')
 
     def get_data(self):
         """
@@ -70,7 +70,7 @@ class SimDevice(DeviceBase):
         return res
 
 
-class SenseHat(DeviceBase):
+class SenseHatDevice(DeviceBase):
     """
     Define a SenseHat device
     :param name: Device name.
@@ -78,8 +78,8 @@ class SenseHat(DeviceBase):
     """
 
     def __init__(self, name):
-        super(SimDevice, self).__init__(name, measurements='sims')
-        self.hat = SenseHat()
+        super(SenseHatDevice, self).__init__(name, measurements='sims')
+        self.hat = SenseHatDevice()
 
     def get_data(self):
         """
