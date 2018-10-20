@@ -12,11 +12,11 @@ RUN apt-get update && apt-get install -yq \
     libjpeg-dev \
   && apt-get clean && rm -rf /var/lib/apt/lists/*
 
-RUN mkdir /balena
+RUN mkdir /cloud_connector
 COPY requirements.txt .
 RUN pip3 install -r /requirements.txt
-COPY . /balena
+COPY . /cloud_connector
 
-WORKDIR /balena
+WORKDIR /cloud_connector
 
 CMD ["python3", "runner.py"]
