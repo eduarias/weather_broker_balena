@@ -17,7 +17,7 @@ def collect_data(device_name):
 
 
 if __name__ == '__main__':
-    name = 'SenseHat'
+    name = 'SenseHatDevice'
     while True:
         r = requests.post('http://cloud_connector:8080/sensor/data',
                           data=collect_data(name))
