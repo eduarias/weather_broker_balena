@@ -9,6 +9,7 @@ RUN  apt-get update && apt-get install -yq \
     python3-pip \
     python3-setuptools \
     build-essential \
+    zlib \
   && apt-get clean && rm -rf /var/lib/apt/lists/*
 
 RUN mkdir /cloud_connector
