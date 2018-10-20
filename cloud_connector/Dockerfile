@@ -12,7 +12,7 @@ RUN  apt-get update && apt-get install -yq \
 
 RUN mkdir /cloud_connector
 COPY requirements.txt .
-RUN pip install -r /requirements.txt
+RUN pip3 install -r /requirements.txt
 COPY . /cloud_connector
 
 WORKDIR /cloud_connector
