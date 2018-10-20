@@ -5,7 +5,7 @@ ENV INITSYSTEM on
 RUN  apt-get update && apt-get install -yq \
     git \
     python-dev \
-    build-base \
+    build-essential \
   && apt-get clean && rm -rf /var/lib/apt/lists/*
 
 RUN mkdir /cloud_connector
