@@ -32,4 +32,4 @@ if __name__ == '__main__':
                           )
         logging.debug('Response: {} - {}'.format(r.status_code, r.text))
         logging.debug('Data sent: {}'.format(r.request.body))
-        time.sleep(60)
+        time.sleep(60*10)
